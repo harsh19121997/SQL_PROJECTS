@@ -104,7 +104,7 @@ LIMIT 10;
 SELECT CITY, AVG(TOTAL_SALES)
 FROM SALES
 GROUP BY CITY
-HAVING AVG(TOTAL_SALES) > (SELECT AVG(TOTAL_SALES) FROM SALES);
+HAVING AVG(TOTAL_SALES) > (SELECT AVG(TOTAL_SALES) FROM SALES); 
 
 
 -- Region with highest total sales
@@ -178,7 +178,7 @@ SELECT
     ROUND((COUNTRY.sales/FINAL.total_sales)*100,2) AS SALES_PER
 FROM COUNTRY, final
 ORDER BY 2 DESC
-LIMIT 5;
+LIMIT 5; # Los Angeles recorded the maximum sales percentage.
 
 
 -- Calculate Gender wise order cancellation rate.
@@ -210,7 +210,7 @@ FROM
     END AS age_group
 FROM SALES) as T1
 GROUP BY T1.age_group
-ORDER BY 2 DESC;
+ORDER BY 2 DESC; # Age group of 55-64 has made highest number of total orders.
 
 
 -- Calculate the sum of total orders placed by different age-groups.
@@ -226,4 +226,4 @@ SELECT
     sum(total_sales) AS Total_sales
 FROM SALES
 GROUP BY 1
-ORDER BY 2 DESC;
+ORDER BY 2 DESC; # Age group of 55-64 has made highest sum of total orders.
